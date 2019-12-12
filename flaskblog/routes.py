@@ -1,13 +1,8 @@
-from dotenv import load_dotenv
-import os
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistationForm, LoginForm
+from flask import render_template, url_for, flash, redirect
+from flaskblog import app
+from flaskblog.models import User, Post
+from flaskblog.forms import RegistationForm, LoginForm
 
-load_dotenv()
-
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 posts = [
     {
